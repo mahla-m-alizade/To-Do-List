@@ -8,17 +8,24 @@ export const ShowTasks = ({
   setTask,
   isSort,
 }) => {
-  // ///////
   const toggleCheck = (index) => {
     const updated = [...taskList];
     updated[index].checked = !updated[index].checked;
     setTaskList(updated);
   };
-
+  const bgColorMap = {
+    Personal: "bg-indigo-200",
+    Work: "bg-blue-200",
+    Chores: "bg-green-200",
+    "Health & wellness": "bg-rose-200",
+    Shopping: "bg-orange-200",
+    none: "bg-yellow2",
+  };
   const taskStyle = (task, id) => {
     return (
       <li
-        className={`w-[96%] m-2 mt-4 py-2  bg-yellow1 border rounded-lg 
+        className={`w-[96%] m-2 mt-4 py-2   border rounded-lg 
+  ${bgColorMap[task.category]}
           ${task.pinned ? "border-4 border-green2 " : "border-green1"} ${
           filterStatus == "done" && !task.checked
             ? "hidden"
@@ -35,6 +42,7 @@ export const ShowTasks = ({
         } `}
         key={id}
       >
+        <p className="flex justify-center"> Category : {task.category}</p>
         <div className="flex items-center ps-3">
           <input
             type="checkbox"
@@ -43,7 +51,7 @@ export const ShowTasks = ({
             onChange={() => toggleCheck(id)}
             className="w-6 h-6 checked:bg-green2 accent-green2 text-green2 bg-yellow1 border border-green1 rounded-sm focus:ring-green2 focus:ring-1 "
           />
-          <label className="w-full py-3 ms-2 text-sm font-medium text-gray-900 break-all">
+          <label className="w-full  ms-2 text-md font-medium text-gray-900 break-all">
             {task.task}
           </label>
           <Remove id={id} taskList={taskList} setTaskList={setTaskList} />

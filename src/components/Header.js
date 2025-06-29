@@ -1,6 +1,9 @@
 import { useState } from "react";
 export const Header = ({ taskList, setTaskList, task, setTask }) => {
   const [newTaskValue, setNewTaskValue] = useState("");
+  const [hidden, sethidden] = useState(true);
+  const [category, setCategory] = useState("none");
+
   const Handlesub = (event) => {
     event.preventDefault();
     if (task) {
@@ -12,6 +15,7 @@ export const Header = ({ taskList, setTaskList, task, setTask }) => {
               checked: task.checked,
               date: new Date().toLocaleString(),
               pinned: task.pinned,
+              category: category ? category : task.category,
             }
           : el
       );
@@ -24,6 +28,7 @@ export const Header = ({ taskList, setTaskList, task, setTask }) => {
         checked: false,
         date: new Date().toLocaleString(),
         pinned: false,
+        category: category ? category : "none",
       };
       setTaskList([...taskList, newTask]);
       setNewTaskValue("");
@@ -52,12 +57,85 @@ export const Header = ({ taskList, setTaskList, task, setTask }) => {
             placeholder="add your task"
             required
           />
-          <button
-            type="submit"
-            className="text-gray-700 absolute w-14 md:w-20 end-2.5 bottom-2.5 bg-green1 hover:bg-green2 focus:ring-2 focus:outline-none focus:ring-green2 font-medium rounded-lg text-sm px-4 py-2 "
-          >
-            {task ? "Edit" : "Add"}
-          </button>
+          <div className=" absolute end-1 top-1">
+            <div className="flex flex-row justify-end m-0.5">
+              <button
+                id="dropdownButton"
+                onMouseEnter={() => sethidden(false)}
+                onMouseLeave={() => sethidden(true)}
+                className={`px-1 py-1 mr-1 w-14 h-10 md:w-20 text-xs md:px-2 md:py-2 md:mr-2 md:text-sm  font-medium text-green-900 bg-blueGreen3 border border-blueGreen3 rounded-lg hover:bg-gray hover:text-gray-800  `}
+                type="button"
+              >
+                Category
+              </button>
+              <button
+                type="submit"
+                className="text-gray-700 ml-1 w-14 md:w-20  bg-green1 hover:bg-green2 focus:ring-2 focus:outline-none focus:ring-green2 font-medium rounded-lg text-sm px-4 py-2 "
+              >
+                {task ? "Edit" : "Add"}
+              </button>
+            </div>
+            <div
+              onMouseEnter={() => sethidden(false)}
+              onMouseLeave={() => sethidden(true)}
+              className={` ${
+                hidden ? "hidden" : ""
+              } absolute z-1000 bg-white divide-y divide-gray-50 rounded-lg shadow-md shadow-green2`}
+            >
+              <ul className=" text-sm text-gray-700 ">
+                <li>
+                  <button
+                    onClick={() => {
+                      setCategory("Personal");
+                    }}
+                    className={` whitespace-nowrap px-4 py-4 w-full hover:bg-green1 hover:rounded-t-lg`}
+                  >
+                    Personal
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      setCategory("Work");
+                    }}
+                    className="block whitespace-nowrap px-4 py-4  w-full hover:bg-green1 hover:rounded-b-lg"
+                  >
+                    Work
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      setCategory("Chores");
+                    }}
+                    className="block whitespace-nowrap px-4 py-4  w-full hover:bg-green1 hover:rounded-b-lg"
+                  >
+                    Chores
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      setCategory("Health & wellness");
+                    }}
+                    className="block whitespace-nowrap px-4 py-4  w-full hover:bg-green1 hover:rounded-b-lg"
+                  >
+                    Health & wellness
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      setCategory("Shopping");
+                    }}
+                    className="block whitespace-nowrap px-4 py-4  w-full hover:bg-green1 hover:rounded-b-lg"
+                  >
+                    Shopping
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </form>
     </header>

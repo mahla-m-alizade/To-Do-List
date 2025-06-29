@@ -1,7 +1,14 @@
 import { ShowTasks, MainHead } from "../components/index";
 import { useState, useEffect } from "react";
 
-export const Main = ({ taskList, setTaskList, task, setTask }) => {
+export const Main = ({
+  taskList,
+  setTaskList,
+  task,
+  setTask,
+  category,
+  setCategory,
+}) => {
   const [filterStatus, setFilterStatus] = useState("all");
   const [searchStatus, setSearchStatus] = useState("all");
   const [SortStatus, setSortStatus] = useState(false);
