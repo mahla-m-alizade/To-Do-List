@@ -5,6 +5,7 @@ export const ShowTasks = ({
   setTaskList,
   filterStatus,
   searchStatus,
+  categoryFilterStatuse,
   setTask,
   isSort,
 }) => {
@@ -33,6 +34,19 @@ export const ShowTasks = ({
             ? "hidden"
             : ""
         }
+       ${
+         [
+           "Personal",
+           "Work",
+           "Chores",
+           "Health & wellness",
+           "Shopping",
+         ].includes(categoryFilterStatuse) &&
+         task.category !== categoryFilterStatuse
+           ? "hidden"
+           : ""
+       }
+
         ${
           [...searchStatus]
             .map((item) => item.date === task.date)

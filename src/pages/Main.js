@@ -10,6 +10,7 @@ export const Main = ({
   setCategory,
 }) => {
   const [filterStatus, setFilterStatus] = useState("all");
+  const [categoryFilterStatuse, setCategoryFilterStatuse] = useState("all");
   const [searchStatus, setSearchStatus] = useState("all");
   const [SortStatus, setSortStatus] = useState(false);
 
@@ -19,6 +20,7 @@ export const Main = ({
         taskList={taskList}
         setTaskList={setTaskList}
         setFilterStatus={setFilterStatus}
+        setCategoryFilterStatuse={setCategoryFilterStatuse}
         setSearchStatus={setSearchStatus}
         isSort={SortStatus}
         setSort={setSortStatus}
@@ -31,6 +33,7 @@ export const Main = ({
         setTask={setTask}
         isSort={SortStatus}
         setSort={setSortStatus}
+        categoryFilterStatuse={categoryFilterStatuse}
       />
     </div>
   );

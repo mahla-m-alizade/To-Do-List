@@ -32,6 +32,7 @@ export const Header = ({ taskList, setTaskList, task, setTask }) => {
       };
       setTaskList([...taskList, newTask]);
       setNewTaskValue("");
+      setCategory("none");
     }
   };
 
@@ -80,7 +81,7 @@ export const Header = ({ taskList, setTaskList, task, setTask }) => {
               onMouseLeave={() => sethidden(true)}
               className={` ${
                 hidden ? "hidden" : ""
-              } absolute z-1000 bg-white divide-y divide-gray-50 rounded-lg shadow-md shadow-green2`}
+              } absolute z-50 bg-white divide-y divide-gray-50 rounded-lg shadow-md shadow-green2`}
             >
               <ul className=" text-sm text-gray-700 ">
                 <li>

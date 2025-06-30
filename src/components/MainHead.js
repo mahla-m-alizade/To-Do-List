@@ -1,10 +1,17 @@
-import { DeleteAll, Sort, Filter, SearchBox } from "../MainHeadButtons";
-import { useEffect, useState } from "react";
+import {
+  DeleteAll,
+  Category,
+  Sort,
+  Filter,
+  SearchBox,
+} from "../MainHeadButtons";
+import { useState } from "react";
 
 export const MainHead = ({
   taskList,
   setTaskList,
   setFilterStatus,
+  setCategoryFilterStatuse,
   setSearchStatus,
   isSort,
   setSort,
@@ -72,6 +79,7 @@ export const MainHead = ({
                 setTaskList={setTaskList}
                 setFilterStatus={setFilterStatus}
               />
+              <Category setCategoryFilterStatuse={setCategoryFilterStatuse} />
             </div>
           </div>
         </div>
