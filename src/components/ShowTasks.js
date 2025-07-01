@@ -96,7 +96,7 @@ export const ShowTasks = ({
 
   return (
     <div className="flex justify-center">
-      <ul className="w-[90%] text-sm font-medium text-green2 bg-yellow-50/40 border border-green1 rounded-b-lg p-3  justify-center">
+      <ul className="w-full md:w-[90%] text-sm font-medium text-green2 bg-yellow-50/40 border border-green1 rounded-b-lg p-3  justify-center">
         {[...taskList]
           .reverse()
           .map((task, index) =>

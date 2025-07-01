@@ -59,7 +59,7 @@ export const Header = ({ taskList, setTaskList, task, setTask }) => {
             required
           />
           <div className=" absolute end-1 top-1">
-            <div className="flex flex-row justify-end m-0.5">
+            <div className="flex flex-row  justify-end m-0.5">
               <button
                 id="dropdownButton"
                 onMouseEnter={() => sethidden(false)}

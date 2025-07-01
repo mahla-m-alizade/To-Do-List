@@ -21,19 +21,19 @@ export const MainHead = ({
   return (
     <div className="flex justify-center">
       <div
-        className={`w-[90%] font-medium text-green2 bg-yellow-50/40 border border-green1  rounded-t-lg p-2 flex justify-between `}
+        className={`w-full md:w-[90%] font-medium text-green2 bg-yellow-50/40 border border-green1 rounded-t-lg p-2 flex justify-between `}
       >
         <p className="ms-2 text-l font-bold text-green2 md:ms-5 md:text-xl hidden sm:flex">
           {taskList.length > 0 ? "you're task list" : "Enter you're task list"}
         </p>
 
-        <div className="flex justify-end items-center ">
-          <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse ">
+        <div className="flex w-full justify-end items-center ">
+          <div className="flex space-x-3  rtl:space-x-reverse ">
             <button
               onClick={() => setHidden(!isHidden)}
               data-collapse-toggle="navbar-sticky"
               type="button"
-              className="inline-flex items-center p-1 m-1 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green2"
+              className="inline-flex items-center m-1 p-1  w-8 h-8 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green2"
               aria-controls="navbar-sticky"
               aria-expanded="false"
             >
@@ -59,7 +59,7 @@ export const MainHead = ({
           <div
             className={`${
               isHidden ? "hidden" : ""
-            } flex md:flex  items-center w-full flex-col md:flex-row md:order-2 `}
+            } flex md:flex  items-center w-full flex-col sm:flex-row sm:order-2 `}
           >
             <SearchBox
               taskList={taskList}
