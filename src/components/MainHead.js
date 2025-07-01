@@ -23,12 +23,17 @@ export const MainHead = ({
       <div
         className={`w-full md:w-[90%] font-medium text-green2 bg-yellow-50/40 border border-green1 rounded-t-lg p-2 flex justify-between `}
       >
-        <p className="ms-2 text-l font-bold text-green2 md:ms-5 md:text-xl hidden sm:flex">
+        <p
+          className={`${
+            !isHidden ? "hidden md:flex" : "md:flex"
+          } ms-2 text-sm md:text-l font-bold text-green2 md:ms-5 md:text-xl `}
+        >
           {taskList.length > 0 ? "you're task list" : "Enter you're task list"}
         </p>
 
         <div className="flex w-full justify-end items-center ">
-          <div className="flex space-x-3  rtl:space-x-reverse ">
+          {/* Mobile Menu Button */}
+          <div className="flex space-x-3 rtl:space-x-reverse ">
             <button
               onClick={() => setHidden(!isHidden)}
               data-collapse-toggle="navbar-sticky"
@@ -59,14 +64,14 @@ export const MainHead = ({
           <div
             className={`${
               isHidden ? "hidden" : ""
-            } flex md:flex  items-center w-full flex-col sm:flex-row sm:order-2 `}
+            } flex flex-col justify-center md:flex md:flex-row items-center w-full sm:flex-row sm:order-2 `}
           >
             <SearchBox
               taskList={taskList}
               setTaskList={setTaskList}
               setSearchStatus={setSearchStatus}
             />
-            <div className=" flex my-4 items-center align-middle">
+            <div className=" flex my-2 items-center ">
               <DeleteAll taskList={taskList} setTaskList={setTaskList} />
               <Sort
                 taskList={taskList}
@@ -74,6 +79,8 @@ export const MainHead = ({
                 isSort={isSort}
                 setSort={setSort}
               />
+            </div>
+            <div className=" flex items-center ">
               <Filter
                 taskList={taskList}
                 setTaskList={setTaskList}

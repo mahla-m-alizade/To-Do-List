@@ -29,7 +29,7 @@ export const Sort = ({ taskList, setTaskList, isSort, setSort }) => {
           ]);
           setSort(false);
         }}
-        className={` px-1 py-1 mr-1  w-14 h-10 text-xs md:px-2 md:py-2 md:mr-2 md:text-sm text-sm font-medium text-green-900 bg-blueGreen3 border border-blueGreen3 w-14 md:w-20 rounded-lg hover:bg-gray hover:text-gray-800  ${
+        className={` px-1 py-1 mr-1 w-16 h-10 md:w-20 text-xs md:px-2 md:py-2 md:mr-2 md:text-sm  font-medium text-green-900 bg-blueGreen3 border border-blueGreen3 w-14 md:w-20 rounded-lg hover:bg-gray hover:text-gray-800  ${
           isSort ? "ring-4 outline-none ring-green2" : ""
         } `}
         type="button"
@@ -42,7 +42,7 @@ export const Sort = ({ taskList, setTaskList, isSort, setSort }) => {
         onMouseLeave={() => sethidden(true)}
         className={` ${
           hidden ? "hidden" : ""
-        } absolute z-100 bg-white divide-y divide-gray-100 rounded-lg shadow-md shadow-green2`}
+        } absolute z-50 bg-white divide-y divide-gray-100 rounded-lg shadow-md shadow-green2`}
       >
         <ul className=" text-sm text-gray-700 ">
           <li>
