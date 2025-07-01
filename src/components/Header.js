@@ -59,19 +59,19 @@ export const Header = ({ taskList, setTaskList, task, setTask }) => {
             required
           />
           <div className=" absolute end-1 top-1">
-            <div className="flex flex-row  justify-end m-0.5">
+            <div className="flex flex-row justify-end m-0.5">
               <button
                 id="dropdownButton"
                 onMouseEnter={() => sethidden(false)}
                 onMouseLeave={() => sethidden(true)}
-                className={`px-1 py-1 mr-1 w-14 h-10 md:w-20 text-xs md:px-2 md:py-2 md:mr-2 text-xs md:text-sm text-green-900 bg-blueGreen3 border border-blueGreen3 rounded-lg hover:bg-gray hover:text-gray-800  `}
+                className={`px-1 py-1 mr-1 w-16 h-10 md:w-20 text-xs md:px-2 md:py-2 md:mr-2 text-xs md:text-sm text-green-900 bg-blueGreen3 border border-blueGreen3 rounded-lg hover:bg-gray hover:text-gray-800  `}
                 type="button"
               >
                 Category
               </button>
               <button
                 type="submit"
-                className="text-gray-700 ml-1 w-14 md:w-20  bg-green1 hover:bg-green2 focus:ring-2 focus:outline-none focus:ring-green2 rounded-lg text-xs md:text-sm px-4 py-2 "
+                className="text-gray-700 ml-1 w-16 md:w-20  bg-green1 hover:bg-green2 focus:ring-2 focus:outline-none focus:ring-green2 rounded-lg text-xs md:text-sm px-4 py-2 "
               >
                 {task ? "Edit" : "Add"}
               </button>
