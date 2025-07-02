@@ -21,17 +21,17 @@ export const MainHead = ({
   return (
     <div className="flex justify-center">
       <div
-        className={`w-full md:w-[90%] font-medium text-green2 bg-yellow-50/40 border border-green1 rounded-t-lg p-2 flex justify-between `}
+        className={`w-full font-medium text-green2 bg-yellow-50/40 border border-green1 rounded-t-lg p-2 flex items-center justify-between `}
       >
         <p
           className={`${
-            !isHidden ? "hidden md:flex" : "md:flex"
+            !isHidden ? "hidden " : "md:flex w-[100%] md:w-[25%]"
           } ms-2 text-sm md:text-l font-bold text-green2 md:ms-5 md:text-xl `}
         >
           {taskList.length > 0 ? "you're task list" : "Enter you're task list"}
         </p>
 
-        <div className="flex w-full justify-end items-center ">
+        <div className={`flex justify-end items-center `}>
           {/* Mobile Menu Button */}
           <div className="flex space-x-3 rtl:space-x-reverse ">
             <button
@@ -64,7 +64,7 @@ export const MainHead = ({
           <div
             className={`${
               isHidden ? "hidden" : ""
-            } flex flex-col justify-center md:flex md:flex-row items-center w-full sm:flex-row sm:order-2 `}
+            } flex w-full flex-col justify-end flex-wrap md:flex md:flex-row lg:flex-nowrap items-center sm:flex-row sm:order-2 `}
           >
             <SearchBox
               taskList={taskList}
@@ -80,7 +80,7 @@ export const MainHead = ({
                 setSort={setSort}
               />
             </div>
-            <div className=" flex items-center ">
+            <div className="  flex  items-center ">
               <Filter
                 taskList={taskList}
                 setTaskList={setTaskList}

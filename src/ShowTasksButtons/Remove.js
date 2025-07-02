@@ -10,7 +10,7 @@ export const Remove = ({ id, taskList, setTaskList }) => {
       data-index={id}
       onClick={handleDelete}
     >
-      remove
+      🗑️
     </button>
   );
 };

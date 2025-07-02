@@ -53,12 +53,12 @@ export const Header = ({ taskList, setTaskList, task, setTask }) => {
                 ? setTask((prev) => ({ ...prev, task: e.target.value }))
                 : setNewTaskValue(e.target.value);
             }}
-            className="block w-full p-4  text-sm text-gray-900 border border-green1 rounded-lg  bg-yellow1 focus:ring-2 focus:ring-green2 
+            className="block  w-full p-4 text-sm text-gray-900 border border-green1 rounded-lg  bg-yellow1 focus:ring-2 focus:ring-green2 
             focus:outline-none focus:border-green2 "
             placeholder="add your task"
             required
           />
-          <div className=" absolute end-1 top-1">
+          <div className="block absolute end-1 top-1">
             <div className="flex flex-row justify-end m-0.5">
               <button
                 id="dropdownButton"

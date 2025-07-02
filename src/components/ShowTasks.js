@@ -25,7 +25,7 @@ export const ShowTasks = ({
   const taskStyle = (task, id) => {
     return (
       <li
-        className={`w-[96%] m-2 mt-4 py-2   border rounded-lg 
+        className={`w-[96%] m-2 mt-4 py-2  border rounded-lg 
   ${bgColorMap[task.category]}
           ${task.pinned ? "border-4 border-green2 " : "border-green1"} ${
           filterStatus == "done" && !task.checked
@@ -56,8 +56,8 @@ export const ShowTasks = ({
         } `}
         key={id}
       >
-        <p className="flex justify-center"> Category : {task.category}</p>
-        <div className="flex items-center ps-3">
+        <p className="flex justify-center "> Category : {task.category}</p>
+        <div className="flex items-center py-2 ps-3">
           <input
             type="checkbox"
             value=""
@@ -96,7 +96,7 @@ export const ShowTasks = ({
 
   return (
     <div className="flex justify-center">
-      <ul className="w-full md:w-[90%] text-sm font-medium text-green2 bg-yellow-50/40 border border-green1 rounded-b-lg p-3  justify-center">
+      <ul className="w-full  text-sm font-medium text-green2 bg-yellow-50/40 border border-green1 rounded-b-lg p-3  justify-center">
         {[...taskList]
           .reverse()
           .map((task, index) =>
