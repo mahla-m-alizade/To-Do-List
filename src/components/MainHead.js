@@ -31,9 +31,9 @@ export const MainHead = ({
           {taskList.length > 0 ? "you're task list" : "Enter you're task list"}
         </p>
 
-        <div className={`flex justify-end items-center `}>
+        <div className={`flex justify-end items-center w-full`}>
           {/* Mobile Menu Button */}
-          <div className="flex space-x-3 rtl:space-x-reverse ">
+          <div className="flex  ">
             <button
               onClick={() => setHidden(!isHidden)}
               data-collapse-toggle="navbar-sticky"
