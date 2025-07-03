@@ -29,7 +29,7 @@ export const Sort = ({ taskList, setTaskList, isSort, setSort }) => {
           ]);
           setSort(false);
         }}
-        className={` px-1 py-1 mr-1  h-10 w-20 text-xs md:px-2 md:py-2 md:mr-2 md:text-sm flex items-center justify-center font-medium text-green-900 bg-blueGreen3 border border-blueGreen3  rounded-lg hover:bg-gray hover:text-gray-800  ${
+        className={` px-1 py-1 h-10 w-20 text-xs md:px-2 md:py-2 md:text-sm flex items-center justify-center font-medium text-green-900 bg-blueGreen3 border border-blueGreen3  rounded-lg hover:bg-gray hover:text-gray-800  ${
           isSort ? "ring-4 outline-none ring-green2" : ""
         } `}
         type="button"

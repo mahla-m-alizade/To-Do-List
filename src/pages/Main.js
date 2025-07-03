@@ -1,21 +1,14 @@
 import { ShowTasks, MainHead } from "../components/index";
 import { useState, useEffect } from "react";
 
-export const Main = ({
-  taskList,
-  setTaskList,
-  task,
-  setTask,
-  category,
-  setCategory,
-}) => {
+export const Main = ({ taskList, setTaskList, setTask }) => {
   const [filterStatus, setFilterStatus] = useState("all");
   const [categoryFilterStatuse, setCategoryFilterStatuse] = useState("all");
   const [searchStatus, setSearchStatus] = useState("all");
   const [SortStatus, setSortStatus] = useState(false);
 
   return (
-    <div className="min-h-[50vh] justify-center p-6">
+    <div className="h-[100%] justify-center p-6">
       <MainHead
         taskList={taskList}
         setTaskList={setTaskList}

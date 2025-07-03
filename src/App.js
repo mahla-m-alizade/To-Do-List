@@ -15,8 +15,8 @@ function App() {
   }, [taskList]);
 
   return (
-    <div className="App p-4 md:p-20 ">
-      <div className="p-0 md:p-5 bg-white rounded-lg border border-green1 ">
+    <div className="App p-4 md:p-20  ">
+      <div className="py-2 md:p-5 bg-white rounded-lg border border-green1 h-[100%]">
         <Header
           taskList={taskList}
           setTaskList={setTaskList}

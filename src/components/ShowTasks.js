@@ -93,7 +93,7 @@ export const ShowTasks = ({
     );
   };
   ////////
-
+  if (taskList.length === 0) return;
   return (
     <div className="flex justify-center">
       <ul className="w-full  flex flex-col text-sm font-medium text-green2 bg-yellow-50/40 border border-green1 rounded-b-lg p-3  justify-center">

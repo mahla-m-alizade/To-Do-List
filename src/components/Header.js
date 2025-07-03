@@ -7,7 +7,6 @@ export const Header = ({ taskList, setTaskList, task, setTask }) => {
   const Handlesub = (event) => {
     event.preventDefault();
     if (task) {
-      console.log(task);
       const newtaskList = taskList.map((el) =>
         el.date === task.date
           ? {
@@ -15,12 +14,13 @@ export const Header = ({ taskList, setTaskList, task, setTask }) => {
               checked: task.checked,
               date: new Date().toLocaleString(),
               pinned: task.pinned,
-              category: category ? category : task.category,
+              category: category !== "none" ? category : task.category,
             }
           : el
       );
       setTaskList(newtaskList);
       setTask(null);
+      setCategory("none");
       setNewTaskValue("");
     } else {
       const newTask = {
@@ -37,7 +37,7 @@ export const Header = ({ taskList, setTaskList, task, setTask }) => {
   };
 
   return (
-    <header className="justify-center ">
+    <header className="flex flex-col justify-center m-auto ">
       <p className="text-3xl font-bold flex justify-center text-green-900 ">
         To Do List
       </p>
@@ -73,7 +73,7 @@ export const Header = ({ taskList, setTaskList, task, setTask }) => {
                 type="submit"
                 className="text-gray-700 ml-1 w-16 md:w-20 flex items-center justify-center bg-green1 hover:bg-green2 focus:ring-2 focus:outline-none focus:ring-green2 rounded-lg text-xs md:text-sm px-4 py-2 "
               >
-                {task ? "Edit" : "Add"}
+                {task ? "Edit" : "Add+"}
               </button>
             </div>
             <div
@@ -86,50 +86,55 @@ export const Header = ({ taskList, setTaskList, task, setTask }) => {
               <ul className=" text-sm text-gray-700 ">
                 <li>
                   <button
+                    type="button"
                     onClick={() => {
                       setCategory("Personal");
                     }}
-                    className={` whitespace-nowrap px-4 py-4 w-full hover:bg-green1 hover:rounded-t-lg`}
+                    className={` whitespace-nowrap px-4 py-4 w-full hover:bg-green1 hover:rounded-t-lg focus:bg-green2`}
                   >
                     Personal
                   </button>
                 </li>
                 <li>
                   <button
+                    type="button"
                     onClick={() => {
                       setCategory("Work");
                     }}
-                    className="block whitespace-nowrap px-4 py-4  w-full hover:bg-green1 hover:rounded-b-lg"
+                    className="block whitespace-nowrap px-4 py-4  w-full hover:bg-green1 hover:rounded-b-lg focus:bg-green2"
                   >
                     Work
                   </button>
                 </li>
                 <li>
                   <button
+                    type="button"
                     onClick={() => {
                       setCategory("Chores");
                     }}
-                    className="block whitespace-nowrap px-4 py-4  w-full hover:bg-green1 hover:rounded-b-lg"
+                    className="block whitespace-nowrap px-4 py-4  w-full hover:bg-green1 hover:rounded-b-lg focus:bg-green2"
                   >
                     Chores
                   </button>
                 </li>
                 <li>
                   <button
+                    type="button"
                     onClick={() => {
                       setCategory("Health & wellness");
                     }}
-                    className="block whitespace-nowrap px-4 py-4  w-full hover:bg-green1 hover:rounded-b-lg"
+                    className="block whitespace-nowrap px-4 py-4  w-full hover:bg-green1 hover:rounded-b-lg focus:bg-green2"
                   >
                     Health & wellness
                   </button>
                 </li>
                 <li>
                   <button
+                    type="button"
                     onClick={() => {
                       setCategory("Shopping");
                     }}
-                    className="block whitespace-nowrap px-4 py-4  w-full hover:bg-green1 hover:rounded-b-lg"
+                    className="block whitespace-nowrap px-4 py-4  w-full hover:bg-green1 hover:rounded-b-lg focus:bg-green2"
                   >
                     Shopping
                   </button>

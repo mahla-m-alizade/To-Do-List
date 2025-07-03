@@ -10,13 +10,20 @@ export const Pin = ({
   const handlePin = (pintask) => {
     const updated = [...taskList];
 
-    if (pintask.pinned == false) {
+    if (pintask.pinned === false) {
       pintask.pinned = !pintask.pinned;
       updated.sort((a, b) => (b.pinned === a.pinned ? 0 : b.pinned ? -1 : 1));
       setTaskList(updated);
     } else {
       pintask.pinned = !pintask.pinned;
-      setTaskList([...taskList].sort((a, b) => a.date.localeCompare(b.date)));
+      const pinned = taskList.filter((t) => t.pinned);
+      const unpinned = taskList.filter((t) => !t.pinned);
+
+      console.log();
+      setTaskList([
+        ...[...unpinned].sort((a, b) => a.date.localeCompare(b.date)),
+        ...pinned,
+      ]);
     }
   };
 

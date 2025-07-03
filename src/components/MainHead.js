@@ -19,14 +19,16 @@ export const MainHead = ({
   const [isHidden, setHidden] = useState(true);
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center ">
       <div
-        className={`w-full font-medium text-green2 bg-yellow-50/40 border border-green1 rounded-t-lg p-2 flex items-center justify-between `}
+        className={`w-full font-medium text-green2 bg-yellow-50/40 border border-green1 ${
+          taskList.length === 0 ? "rounded-lg" : "rounded-t-lg"
+        } p-2  flex items-center justify-between `}
       >
         <p
           className={`${
             !isHidden ? "hidden " : "md:flex w-[100%] md:w-[25%]"
-          } ms-2 text-sm md:text-l font-bold text-green2 md:ms-5 md:text-xl `}
+          }  text-sm md:text-l px-2 font-bold text-green2  md:text-xl `}
         >
           {taskList.length > 0 ? "you're task list" : "Enter you're task list"}
         </p>
@@ -64,29 +66,31 @@ export const MainHead = ({
           <div
             className={`${
               isHidden ? "hidden" : ""
-            } flex w-full flex-col justify-end flex-wrap md:flex md:flex-row lg:flex-nowrap items-center sm:flex-row sm:order-2 `}
+            } flex w-full gap-2  flex-col my-auto justify-end flex-wrap md:flex md:flex-row max-w-[90%] lg:flex-nowrap items-center sm:flex-row sm:order-2 `}
           >
             <SearchBox
               taskList={taskList}
               setTaskList={setTaskList}
               setSearchStatus={setSearchStatus}
             />
-            <div className=" flex my-2 items-center ">
-              <DeleteAll taskList={taskList} setTaskList={setTaskList} />
-              <Sort
-                taskList={taskList}
-                setTaskList={setTaskList}
-                isSort={isSort}
-                setSort={setSort}
-              />
-            </div>
-            <div className="flex items-center ">
-              <Filter
-                taskList={taskList}
-                setTaskList={setTaskList}
-                setFilterStatus={setFilterStatus}
-              />
-              <Category setCategoryFilterStatuse={setCategoryFilterStatuse} />
+            <div className="mx-auto flex sm:gap-2 flex-col sm:flex-row items-center">
+              <div className=" flex my-2 gap-2 items-center  ">
+                <DeleteAll taskList={taskList} setTaskList={setTaskList} />
+                <Sort
+                  taskList={taskList}
+                  setTaskList={setTaskList}
+                  isSort={isSort}
+                  setSort={setSort}
+                />
+              </div>
+              <div className="flex items-center gap-2 ">
+                <Filter
+                  taskList={taskList}
+                  setTaskList={setTaskList}
+                  setFilterStatus={setFilterStatus}
+                />
+                <Category setCategoryFilterStatuse={setCategoryFilterStatuse} />
+              </div>
             </div>
           </div>
         </div>
