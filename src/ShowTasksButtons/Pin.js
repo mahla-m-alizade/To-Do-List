@@ -29,7 +29,7 @@ export const Pin = ({
 
   return (
     <button
-      className={`border border-green2 p-1 mx-1.5 bg-green1 hover:bg-green2 rounded-full md:p-2  ${
+      className={`flex items-center justify-center border border-green2 p-1 mx-1.5 bg-green1 hover:bg-green2 rounded-full md:p-2  ${
         task.pinned
           ? "bg-red-100 text-bold hover:bg-red-300 border-red-500 "
           : "bg-green1"

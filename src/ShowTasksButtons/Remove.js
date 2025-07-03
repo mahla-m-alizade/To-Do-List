@@ -6,7 +6,7 @@ export const Remove = ({ id, taskList, setTaskList }) => {
 
   return (
     <button
-      className="border border-green2 p-1 mx-1.5 ms-3 bg-green1 text-green-800 hover:bg-green2 rounded-full md:p-2 "
+      className="flex items-center justify-center border border-green2 p-1 mx-1.5 ms-3 bg-green1 text-green-800 hover:bg-green2 rounded-full md:p-2 "
       data-index={id}
       onClick={handleDelete}
     >

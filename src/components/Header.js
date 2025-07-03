@@ -53,7 +53,7 @@ export const Header = ({ taskList, setTaskList, task, setTask }) => {
                 ? setTask((prev) => ({ ...prev, task: e.target.value }))
                 : setNewTaskValue(e.target.value);
             }}
-            className="block  w-full p-4 text-sm text-gray-900 border border-green1 rounded-lg  bg-yellow1 focus:ring-2 focus:ring-green2 
+            className="block w-full p-4 text-sm text-gray-900 border border-green1 rounded-lg  bg-yellow1 focus:ring-2 focus:ring-green2 
             focus:outline-none focus:border-green2 "
             placeholder="add your task"
             required
@@ -64,14 +64,14 @@ export const Header = ({ taskList, setTaskList, task, setTask }) => {
                 id="dropdownButton"
                 onMouseEnter={() => sethidden(false)}
                 onMouseLeave={() => sethidden(true)}
-                className={`px-1 py-1 mr-1 w-16 h-10 md:w-20 text-xs md:px-2 md:py-2 md:mr-2 text-xs md:text-sm text-green-900 bg-blueGreen3 border border-blueGreen3 rounded-lg hover:bg-gray hover:text-gray-800  `}
+                className={`px-1 py-1 mr-1 w-16 h-10 md:w-20 text-xs md:px-2 md:py-2 md:mr-2 flex items-center justify-center  md:text-sm text-green-900 bg-blueGreen3 border border-blueGreen3 rounded-lg hover:bg-gray hover:text-gray-800  `}
                 type="button"
               >
                 Category
               </button>
               <button
                 type="submit"
-                className="text-gray-700 ml-1 w-16 md:w-20  bg-green1 hover:bg-green2 focus:ring-2 focus:outline-none focus:ring-green2 rounded-lg text-xs md:text-sm px-4 py-2 "
+                className="text-gray-700 ml-1 w-16 md:w-20 flex items-center justify-center bg-green1 hover:bg-green2 focus:ring-2 focus:outline-none focus:ring-green2 rounded-lg text-xs md:text-sm px-4 py-2 "
               >
                 {task ? "Edit" : "Add"}
               </button>

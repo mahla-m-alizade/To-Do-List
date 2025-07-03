@@ -21,7 +21,7 @@ export const SearchBox = ({ taskList, setTaskList, setSearchStatus }) => {
 
   return (
     <>
-      <form className="h-10 relative mx-2" onSubmit={handleSub}>
+      <form className="h-10 relative mr-1" onSubmit={handleSub}>
         <div className="flex">
           <input
             type="search"

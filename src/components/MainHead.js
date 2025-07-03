@@ -19,7 +19,7 @@ export const MainHead = ({
   const [isHidden, setHidden] = useState(true);
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center items-center">
       <div
         className={`w-full font-medium text-green2 bg-yellow-50/40 border border-green1 rounded-t-lg p-2 flex items-center justify-between `}
       >
@@ -80,7 +80,7 @@ export const MainHead = ({
                 setSort={setSort}
               />
             </div>
-            <div className="  flex  items-center ">
+            <div className="flex items-center ">
               <Filter
                 taskList={taskList}
                 setTaskList={setTaskList}

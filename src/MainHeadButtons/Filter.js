@@ -14,7 +14,7 @@ export const Filter = ({ setFilterStatus }) => {
           setFilterStatus("all");
           setFilter(false);
         }}
-        className={`px-1 py-1 mr-1 h-10 w-20 text-xs md:px-2 md:py-2 md:mr-2 md:text-sm  font-medium text-green-900 bg-blueGreen3 border border-blueGreen3 rounded-lg hover:bg-gray hover:text-gray-800  ${
+        className={`px-1 py-1 mr-1 h-10 w-20 text-xs flex items-center justify-center md:px-2 md:py-2 md:mr-2 md:text-sm  font-medium text-green-900 bg-blueGreen3 border border-blueGreen3 rounded-lg hover:bg-gray hover:text-gray-800  ${
           isFilter ? "ring-4 outline-none ring-green2" : ""
         } `}
         type="button"
