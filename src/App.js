@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App p-4 md:p-20  ">
-      <div className="py-2 md:p-5 bg-white rounded-lg border border-green1 min-h-[100%]">
+      <div className="py-2 md:p-5 bg-white rounded-lg border border-green1 h-[100vh]">
         <Header
           taskList={taskList}
           setTaskList={setTaskList}
