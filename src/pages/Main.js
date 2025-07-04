@@ -8,7 +8,7 @@ export const Main = ({ taskList, setTaskList, setTask }) => {
   const [SortStatus, setSortStatus] = useState(false);
 
   return (
-    <div className="justify-center p-6 min-h-[100%]">
+    <div className="justify-center p-6 h-[100vh]">
       <MainHead
         taskList={taskList}
         setTaskList={setTaskList}
